@@ -37,5 +37,11 @@ jobs:
       - name: Deploy to AWS Lambda
         run: |
          serverless deploy
+      - name: Configure AWS credentials
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.A }}
+          aws configure set aws_secret_access_key ${{ secrets.B }}
+          aws configure set default.region ${{ secrets.C }}
+
 
      
