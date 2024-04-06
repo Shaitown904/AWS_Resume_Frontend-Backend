@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Dashboard</title>
+</head>
+<body>
+    <h1>AWS Dashboard</h1>
+    <h2>Cost and Usage</h2>
+    <p>Blended cost for EC2 and S3: ${{ cost_data }}</p>
+    <div>
+        <a href="/Instances"><button>View EC2 Instances</button></a>
+        <a href="/Buckets"><button>View S3 Buckets</button></a>
+       
+    </div>
+    <ul>
+        {% for instance in instances %}
+            <li>{{ instance.InstanceId }} - {{ instance.InstanceType }} - {{ instance.State }}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for bucket in buckets %}
+            <li>{{bucket.Name}} - {{bucket.CreationDate}} </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

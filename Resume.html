@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shaikim_Medlin_Resume</title>
+<style>
+    .black-bar {
+        background-color: black;
+        color: white;
+        height: 50px;
+        width: 100%;
+        line-height: 50px;
+        text-align: left;
+    }
+
+    .red-line {
+        border-bottom: 2px solid red;
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+<div class="stuff"><h1>Shaikim Medlin</h1></div>
+
+<div class="black-bar"> Peoria, AZ 85383 | 623-236-4205 | shaikim.medlin@gmail.com</div>
+
+<div class="red-line"></div>
+
+<div class="stuff">
+    <h2>Professional Summary</h2>
+    <p>I am an Information Technology graduate with a Bachelor of Science degree and hands-on system administration experience gained through home labs and coursework. I am excited about the opportunity to leverage my foundation in hardware and software solutions, along with my excellent problem-solving and customer service skills, to contribute effectively to a dynamic and innovative tech team. I am eager to learn and grow in a fast-paced environment as I am committed to continuous improvement and staying knowledgeable of emerging technologies, seeking opportunities to expand my skill set and contribute effectively to the success of the team and the organization.</p>
+</div>
+
+
+
+<div class="stuff">
+    <h2>Skills</h2>
+    <div class="red-line"></div>
+    <ul>
+        <li>Operating Systems: Proficient with Windows, macOS, and Linux environments</li>
+        <li>Programming: Familiarity with Python programming for automation tasks</li>
+        <li>Software Proficiency: Proficient in Microsoft Office Suite (Word, Excel, PowerPoint) and experience with their SAAS equivalents</li>
+        <li>Networking Skills: Knowledge of IPv4 and IPv6 addresses, switches, routers, and firewalls.</li>
+        <li>Database Management: Familiar with SQL and MongoDB</li>
+        <li>Collaboration and Communication: Strong team collaboration and effective written and verbal communication skills</li>
+        <li>Cloud Services: Familiarity with AWS and Azure cloud technologies</li>
+        <li>Adaptability: Rapid adaptation to new technologies and learning environments</li>
+        <li>Customer Service: Exceptional customer service skills honed through experience as a Sales Associate</li>
+        <li>Problem-solving Skills: Demonstrated excellence in problem-solving and analytical skills.</li>
+    </ul>
+</div>
+
+<div class="stuff"><h2>Eductaion</h2></div>
+<div class="red-line"></div>
+<div class="stuff">
+    <ul>
+        <li>Bachelor of Science: Information Technology</li>
+        <li>Grand Canyon University - Phoenix, AZ</li>
+        <li>GPA 3.26</li>
+        <li>Graduated Dec 2023</li>
+    </ul>
+    <ul>
+        <li>Associate of Applied Science: Cybersecurity- Linux System Administration </li>
+        <li>Maricopa Community Colleges- Glendale Community College - Glendale, AZ</li>
+        <li>GPA 3.4</li>
+        <li>Graduated Dec 2021</li>
+    </ul>
+</div>
+
+<div class="stuff"><h2>Licenses/Certifications<h2></h2></div>
+<div class="red-line"></div>
+<div class="stuff">
+    <ul>
+        <li>Microsoft Certified: Azure Fundamentals</li>
+        <li>Issued:  Feb 2024</li>
+        <li>Credential ID: 32DD45E46C89C45C</li>
+    </ul>
+<div class="stuff"><h2>Projects<h2></h2></div>
+<div class="red-line"></div>
+ <div class="stuff">
+     <ul>
+        <li>Virtual Home Network and Linux Server- Created a secure virtualized home network and Linux media server using VirtualBox. Key objectives included selective device access to the media server, optimizing file transfers, and conducting security tests. Demonstrated knowledge in Linux system administration, Bash scripting, security hardening, and introductory penetration testing. https://youtu.be/Xgv2f2LS7-c</li>
+         <li>Deploying a Webserver to Azure using Terraform- GitHub Repository for Deploying a Webserver to Azure using Terraform. In this project, I demonstrated the deployment of a static website using Terraform and Azure. The infrastructure is managed as code, showcasing foundational skills in IaC (Infrastructure as Code) and knowledge of Azure Cloud. https://github.com/Shaitown904/Deploy-webserver-to-Azure-using-Terraform.git</li>
+    </ul>
+
+<div class= "stuff"><h2>Work History<h2></h2></div>
+<div class="red-line"></div>
+<div class="stuff">
+<h3> The Home Depot, Sales Associate (Garden), From 10/2019 to Current 
+    </h3>
+     <ul>
+            <li>Provide excellent customer service by giving helpful information to the customers regarding the product the customer is trying to buy.</li>
+            <li>Assist Customers by providing answers to questions the customer might have about a product./li>
+            <li>Restock Shelves often.</li>
+            <li>Make sure the isles in my department are clean.</li>
+     </ul>
+<h3>Awards: Homer Award Bronze(achieved for showing outstanding customer service)</h3>
+<p>Total Visits: <span id="visit-count">Loading....</span></p>
+<script>
+    // getting the visit count from DynamoDB
+    async function fetchVisitCount() {
+        try {
+            const response = await fetch('https://your-api-endpoint/visitCount')
+            const data = await response.json();
+            const visitCount = data.Count;
+
+            //update the counter
+            document.getElementByID('visit-count').textContent = visitCount;
+        } catch (error){
+            console.error("error fetaching visit count:" , error);
+        }
+
+    }
+</script>
+<script>
+    // Function to record visit
+async function recordVisit() {
+    try {
+        const response = await fetch('https://your-api-endpoint/recordvisit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (response.ok) {
+            console.log('Visit recorded successfully');
+        } else {
+            console.error('Error recording visit');
+        }
+    } catch (error) {
+        console.error('Error recording visit:', error);
+    }
+}
+
+// Fetch visitor count when the page loads
+document.addEventListener('DOMContentLoaded', fetchVisitCount);
+
+// Record visit when the page is visited
+document.addEventListener('DOMContentLoaded', recordVisit);
+
+</script>
+
+</body>
+</html>
