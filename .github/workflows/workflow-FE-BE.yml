@@ -24,7 +24,7 @@ jobs:
       - name: Copy files to EC2 server
         run: |
           scp -r build/* username@ec2-ip-address:/path/to/destination
-
+ 
   deploy_backend:
     runs-on: ubuntu-latest
     steps:
